@@ -2,3 +2,12 @@
 # начиная с C1.
 
 N = int(input("Введите четное число N: "))
+C1 = input("Введите символ C1: ")
+C2 = input("Введите символ C2: ")
+
+result = ""
+
+for i in range(N // 2):
+    result += C1 + C2
+
+print(result)

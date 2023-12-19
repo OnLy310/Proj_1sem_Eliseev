@@ -13,7 +13,6 @@ def closest_point(a, b):
         distance = math.sqrt((b[0]) - point[0] ** 2 + (b[1]) - point[1] ** 2)
 
         if distance < min_distance:
-            min_distance = distance
             closest = point
 
         return closest
