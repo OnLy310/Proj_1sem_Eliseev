@@ -4,20 +4,21 @@
 # 2. в каких магазинах можно приобрести одновременно молоко и сыр.
 # 3. в каких магазинах можно приобрести сахар.
 
-magnit = ["молоко", "соль", "сахар"]
-pyaterochka = ["мясо", "молоко", "сыр"]
-perekrestok = ["молоко", "творог", "сыр", "сахар"]
+magnit = {"молоко", "соль", "сахар"}
+pyaterochka = {"мясо", "молоко", "сыр"}
+perekrestok = {"молоко", "творог", "сыр", "сахар"}
 
-full_product_list = set(magnit + pyaterochka + perekrestok)
-print("1. Полный список товаров: ", full_product_list)
+stores = {
+    "Магнит": magnit,
+    "Пятерочка": pyaterochka,
+    "Перекресток": perekrestok
+}
 
-milk_and_cheese_store = [store for store in {"Магнит": magnit,
-                                             "Пятерочка": pyaterochka,
-                                             "Перекресток": perekrestok}.items() if "молоко" in store[1] and "сыр" in
-                         store[1]]
-print("2. В магазинах можно приобрести одновременно молоко и сыр: ", [store[0] for store in milk_and_cheese_store])
+all_products = set.union(*stores.values())
+print("1. Полный список всех товаров:", all_products)
 
-sugar_stores = [store for store in {"Магнит": magnit,
-                                    "Пятерочка": pyaterochka,
-                                    "Перекресток": perekrestok}.items() if "молоко" in store[1]]
-print("3. В магазинах можно приобрести сахар: ", [store[0] for store in sugar_stores])
+milk_and_cheese_stores = {store for store, products in stores.items() if "молоко" in products and "сыр" in products}
+print("2. Магазины с молоком и сыром:", milk_and_cheese_stores)
+
+sugar_stores = {store for store, products in stores.items() if "сахар" in products}
+print("3. Магазины с сахаром:", sugar_stores)
