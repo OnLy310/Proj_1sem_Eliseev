@@ -8,6 +8,6 @@ def decrease_selection(lst):
     return count
 
 
-my_list = [5, 4, 3, 2, 1, 6, 5, 4, 3, 2]
+my_list = [5, 4, 8, 3, 2, 1, 6, 5, 4, 3, 2]
 result = decrease_selection(my_list)
 print("Количество участков, на которых элементы монотонно убывают:", result)
