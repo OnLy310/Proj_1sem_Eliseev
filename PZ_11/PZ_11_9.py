@@ -23,7 +23,7 @@ with open('sequence.txt', 'w') as file:
     file.write(', '.join(map(str, sequence)) + '\n')
     file.write(f'Количество элементов: {len(sequence)}\n')
     file.write(f'Индекс последнего максимального элемента: {sequence.index(max(sequence))}\n')
-    file.write((f'Меняем местами первую и последнюю трети: {third}'))
+    file.write(f'Меняем местами первую и последнюю трети: {third}')
 
 
 
