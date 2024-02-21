@@ -13,9 +13,10 @@ import random
 
 sequence = [random.randint(-100, 100) for _ in range(20)]
 
-# Меняем местами
-third = len(sequence) // 3
-sequence[:third], sequence[-third:] = sequence[-third:], sequence[:third]
+# Запись в файл
+with open('begin_sequence.txt', 'w') as file:
+    file.write('Последовательность из целых положительных и отрицательных чисел:\n')
+    file.write(', '.join(map(str, sequence)))
 
 # Запись последовательности в файл
 with open('sequence.txt', 'w') as file:
@@ -23,14 +24,10 @@ with open('sequence.txt', 'w') as file:
     file.write(', '.join(map(str, sequence)) + '\n')
     file.write(f'Количество элементов: {len(sequence)}\n')
     file.write(f'Индекс последнего максимального элемента: {sequence.index(max(sequence))}\n')
-    file.write(f'Меняем местами первую и последнюю трети: {third}')
-
-
-
-# Запись в файл
-with open('begin_sequence.txt', 'w') as file:
-    file.write('Последовательность из целых положительных и отрицательных чисел:\n')
-    file.write(', '.join(map(str, sequence)))
+    # Меняем местами
+    third = len(sequence) // 3
+    sequence[:third], sequence[-third:] = sequence[-third:], sequence[:third]
+    file.write(f'Меняем местами первую и последнюю трети: \n{sequence}')
 
 
 # Чтение файла и подсчет букв в нижнем регистре
