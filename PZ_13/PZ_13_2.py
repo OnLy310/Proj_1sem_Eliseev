@@ -1,6 +1,6 @@
 # В матрице найти среднее арифметическое положительных элементов, кратных 3.
 
-def average_of_multiples(matrix):
+def average(matrix):
     total = 0
     count = 0
 
@@ -22,5 +22,5 @@ matrix = [
     [-6, 8, 10]
 ]
 
-result = average_of_multiples(matrix)
+result = average(matrix)
 print("Среднее арифметическое положительных элементов, кратных 3, в матрице:", result)
