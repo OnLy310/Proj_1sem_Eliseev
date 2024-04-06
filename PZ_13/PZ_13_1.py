@@ -10,7 +10,6 @@ def replace_second_column(matrix, array):
         matrix[i][1] = array[i]
 
 
-# Пример использования:
 matrix = [[1, 2, 3],
           [4, 5, 6],
           [7, 8, 9]]

@@ -16,7 +16,6 @@ def average_of_multiples(matrix):
         return total / count
 
 
-# Пример матрицы
 matrix = [
     [1, 6, 9],
     [12, 5, -3],
