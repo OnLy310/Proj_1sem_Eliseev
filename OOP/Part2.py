@@ -24,5 +24,5 @@ note2 = Note("Задача 2")
 # note2.upcount()
 # print(note2.count)
 
-print(note1.upcount) # bound
-print(Note.upcount) # function
+print(note1.upcount)  # bound
+print(Note.upcount)  # function
