@@ -5,8 +5,8 @@
 import sqlite3 as sq
 
 with sq.connect('учебный_план.db') as con:
-    cursor = con.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS Дисциплины (
+    cur = con.cursor()
+    cur.execute('''CREATE TABLE IF NOT EXISTS Дисциплины (
                   Код INTEGER PRIMARY KEY,
                   Наименование TEXT,
                   Специальность TEXT,
@@ -14,25 +14,26 @@ with sq.connect('учебный_план.db') as con:
                   Практические INTEGER,
                   Лабораторные INTEGER,
                   Форма_отчетности TEXT)''')
-con.commit()
+    con.commit()
 
 
 def add_discipline(code, name, speciality, lectures, practical, laboratory, reporting_form):
-    cursor.execute('''INSERT INTO Дисциплины (Код, Наименование, Специальность, Лекции, Практические, Лабораторные,
+    cur.execute('''INSERT INTO Дисциплины (Код, Наименование, Специальность, Лекции, Практические, Лабораторные,
     Форма_отчетности)
-                      VALUES (?, ?, ?, ?, ?, ?, ?)''', (code, name, speciality, lectures, practical, laboratory,
-                                                        reporting_form))
+    VALUES (?, ?, ?, ?, ?, ?, ?)''',
+                (code, name, speciality, lectures, practical, laboratory,
+                 reporting_form))
     con.commit()
 
 
 def find_discipline_by_code(code):
-    cursor.execute('''SELECT * FROM Дисциплины WHERE Код = ?''', (code,))
-    return cursor.fetchall()
+    cur.execute('''SELECT * FROM Дисциплины WHERE Код = ?''', (code,))
+    return cur.fetchall()
 
 
 def find_discipline_by_name(name):
-    cursor.execute('''SELECT * FROM Дисциплины WHERE Наименование = ?''', (name,))
-    return cursor.fetchall()
+    cur.execute('''SELECT * FROM Дисциплины WHERE Наименование = ?''', (name,))
+    return cur.fetchall()
 
 # Поиск по другим полям для удаления и редактирования
 
