@@ -41,14 +41,13 @@ def findDisciplineByName(name):
     result = cur.fetchall()
     return result
 
+
 def deleteByNumber(disciplines_id):
     con = sq.connect("syllabus.db")
     cur = con.cursor()
     cur.execute('''DELETE FROM Disciplines WHERE disciplines_id=?''', (disciplines_id, ))
     con.commit()
     con.close()
-
-# Поиск по другим полям для удаления и редактирования
 
 
 add_discipline(1, 'Математика', 'Математика', 20, 30, 10, 'Экзамен')
@@ -62,11 +61,13 @@ add_discipline(8, 'Биология', 'Биология', 20, 25, 15, 'Экза�
 add_discipline(9, 'Физическая культура', 'Физическая культура', 5, 8, 7, 'Экзамен')
 add_discipline(10, 'Английский язык', 'Английский язык', 35, 45, 25, 'Экзамен')
 
+
 def getDisciplines():
     con = sq.connect("syllabus.db")
     c = con.cursor()
     c.execute('SELECT * FROM disciplines')
     return c.fetchall()
+
 
 for disciplanes in getDisciplines():
     print(disciplanes)
