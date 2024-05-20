@@ -13,14 +13,15 @@ class Image:
     def title_upped(self):
         self.title = self.title.upper()
 
-image1 = Image('2048*1080', 'kartinka', '.png')
-image2 = Image('800*600', 'kartinka2', '.jpeg')
+image1 = Image('4k', 'helloworld', '.jpg')
+image2 = Image('1080p', 'imagecool', '.png')
+
 
 print(image1.__dict__)
 print(image2.__dict__)
 
-image1.resize('Full HD')
-image2.resize('700*500')
+image1.resize('1080p')
+image2.resize('4k')
 
 print(image1.__dict__)
 print(image2.__dict__)
