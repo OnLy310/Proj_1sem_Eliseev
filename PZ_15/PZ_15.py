@@ -115,7 +115,7 @@ def getDisciplines():
     return c.fetchall()
 
 
-for disciplanes in getDisciplines():
-    print(disciplanes)
+for disciplines in getDisciplines():
+    print(disciplines)
 
 con.close()
