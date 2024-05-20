@@ -45,7 +45,53 @@ def findDisciplineByName(name):
 def deleteByNumber(disciplines_id):
     con = sq.connect("syllabus.db")
     cur = con.cursor()
-    cur.execute('''DELETE FROM Disciplines WHERE disciplines_id=?''', (disciplines_id, ))
+    cur.execute('''DELETE FROM Disciplines WHERE disciplines_id = ?''', (disciplines_id, ))
+    con.commit()
+    con.close()
+
+
+def deleteByLectures(lectures):
+    con = sq.connect("syllabus.db")
+    cur = con.cursor()
+    cur.execute('''DELETE FROM Disciplines WHERE Lectures = ?''', (lectures,))
+    con.commit()
+    con.close()
+
+
+def deleteByPractical(practical):
+    con = sq.connect("syllabus.db")
+    cur = con.cursor()
+    cur.execute('''DELETE FROM Disciplines WHERE Practical = ?''', (practical,))
+    con.commit()
+    con.close()
+
+
+def updateBySpeciality(Code, newSpeciality):
+    con = sq.connect("syllabus.db")
+    cur = con.cursor()
+    cur.execute('''UPDATE Disciplines
+                 SET Speciality = ?
+                 WHERE Code = ?''', (Code, newSpeciality,))
+    con.commit()
+    con.close()
+
+
+def updateByName(Code, newName):
+    con = sq.connect("syllabus.db")
+    cur = con.cursor()
+    cur.execute('''UPDATE Disciplines
+                 SET Name = ?
+                 WHERE Code = ?''', (Code, newName,))
+    con.commit()
+    con.close()
+
+
+def updateByLectures(Code, newLectures):
+    con = sq.connect("syllabus.db")
+    cur = con.cursor()
+    cur.execute('''UPDATE Disciplines
+                 SET Lectures = ?
+                 WHERE Code = ?''', (Code, newLectures,))
     con.commit()
     con.close()
 
