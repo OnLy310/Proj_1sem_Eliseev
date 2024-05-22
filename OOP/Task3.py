@@ -16,8 +16,9 @@ class Person:
     def total_people():
         return f'Создано {Person.count} экземпляров класса!'
 
+
 p1 = Person('first')
 p2 = Person('second')
 p3 = Person('third')
-p4 = Person('fird')
+p4 = Person('fourth')
 print(Person.total_people())

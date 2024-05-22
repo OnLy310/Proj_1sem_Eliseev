@@ -19,6 +19,7 @@ class Note:
     def resert_count(self):
         self.count = 0
 
+
 note1 = Note('Задача 1', True)
 print(note1.__dict__)
 
