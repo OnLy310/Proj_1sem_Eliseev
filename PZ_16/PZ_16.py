@@ -17,14 +17,11 @@ class Calculator:
         return a / b
 
 
-# Пример использования класса с вводом значений с клавиатуры
 calc = Calculator()
 
-# Ввод значений с клавиатуры
 a = float(input("Введите первое число: "))
 b = float(input("Введите второе число: "))
 
-# Примеры операций
 print(f"Сложение: {a} + {b} = {calc.add(a, b)}")
 print(f"Вычитание: {a} - {b} = {calc.subtract(a, b)}")
 print(f"Умножение: {a} * {b} = {calc.multiply(a, b)}")
