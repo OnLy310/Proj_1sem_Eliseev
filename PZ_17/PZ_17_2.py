@@ -3,6 +3,7 @@
 
 from tkinter import *
 
+
 def calculate_unoccupied_length():
     try:
         A = int(A_entry.get())
@@ -14,6 +15,7 @@ def calculate_unoccupied_length():
         result_label.config(text=f"Длина незанятой части отрезка: {unoccupied_length}")
     except ValueError:
         result_label.config(text="Ошибка: введите целые числа")
+
 
 root = Tk()
 root.title("Рассчитать незанятую длину отрезка")
